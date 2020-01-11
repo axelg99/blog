@@ -64,6 +64,23 @@ router.post('/inscription', (req, res, next) => {
         }
     });
 });
+
+router.get('/home/new_art', (req, res, next) => {
+    res.render('new_art', { title : "My Blog"});
+});
+
+router.post('/home/new_art', async (req, res) => {
+    const { name_art, article } = req.body;
+    const newlink = {
+        name_art,
+        article
+    };
+
+    await pool.query('INSERT INTO articles set ?', [newlink]);
+    res.redirect('/home');
+    
+});
+
 router.get('/loggout', (req, res, next) => {
    
     if(req.session.user) {

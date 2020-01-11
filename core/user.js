@@ -51,11 +51,11 @@ User.prototype = {
         this.find(username, function(user) {
             if(user) {
                 sha = shajs('sha256');
-                console.log("password : "+ password);
+                /*console.log("password : "+ password);
                 console.log("passSQL : "+user.password);
-
+                */
                    let hasedpwd = sha.update(password).digest('hex');
-                    console.log("hasedpwd : "+hasedpwd);
+                   /* console.log("hasedpwd : "+hasedpwd);*/
                     if(hasedpwd === user.password) {
                         callback(user);
                         return;
@@ -64,7 +64,6 @@ User.prototype = {
             callback(null);
         });
     }
-
 }
 
 module.exports = User;

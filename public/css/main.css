@@ -12,6 +12,31 @@
 /*//////////////////////////////////////////////////////////////////
 [ RESTYLE TAG ]*/
 
+table {
+  border:3px solid #6495ed;
+  border-collapse:collapse;
+  width:90%;
+  margin:auto;
+  text-align: center;
+  }
+  tbody {
+    background-color:#FFFFFF;
+    border:1px solid #6495ed;
+    }
+    th {
+      font-family:monospace;
+      border:1px dotted #6495ed;
+      padding:5px;
+      background-color:#EFF6FF;
+      width:25%;
+      }
+      td {
+      font-family:sans-serif;
+      font-size:80%;
+      border:1px solid #6495ed;
+      padding:5px;
+      text-align:left;
+      }
 * {
 	margin: 0px; 
 	padding: 0px; 
