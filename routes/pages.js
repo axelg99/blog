@@ -77,7 +77,7 @@ router.post('/home/new_art', async (req, res) => {
     };
 
     await pool.query('INSERT INTO articles set ?', [newlink]);
-    res.redirect('/home');
+    res.send("Article envoyé");
     
 });
 

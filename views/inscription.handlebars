@@ -4,9 +4,9 @@
 				<span class="login100-form-title p-b-41">
 					Blog - Inscription
 				</span>
-				<form class="login100-form validate-form p-b-33 p-t-5" method="POST" action="/inscription">
+				<form name="myForm" class="login100-form validate-form p-b-33 p-t-5" method="POST" action="/inscription" onsubmit="return validateForm()" required>
 
-					<div class="wrap-input100 validate-input" data-validate = "Enter username">
+					<div class="wrap-input100 validate-input" data-validate = "Enter username" >
 						<input class="input100" type="text" name="username" placeholder="Username">
 						<span class="focus-input100" data-placeholder="&#xe82a;"></span>
 					</div>
@@ -31,13 +31,30 @@
 
 				</form>
 			</div>
+<script>
+	function validateForm() {
+  var x = document.forms["myForm"]["username"].value;
+  var y = document.forms["myForm"]["password"].value;
+  if (x == "" || x == null) {
+    alert("Veuillez rentrer un nom d'utilisateur.");
+    return false;
+  }
+  if (y == "" || y == null) {
+    alert("Veuillez rentrer un mot de passe.");
+    return false;
+  }
+}
+</script>
+
+
+
 			===========================>
 
 						<div class="wrap-login100 p-t-30 p-b-50">
 				<span class="login100-form-title p-b-41">
 					Blog - Connexion
 				</span>
-				<form class="login100-form validate-form p-b-33 p-t-5" method="POST" action="/connexion">
+				<form class="login100-form validate-form p-b-33 p-t-5" method="POST" action="/connexion" onsubmit="return validateForm()" required>
 
 					<div class="wrap-input100 validate-input" data-validate = "Enter username">
 						<input class="input100" type="text" name="username" placeholder="Username" autofocus>
