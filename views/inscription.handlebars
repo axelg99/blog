@@ -4,7 +4,7 @@
 				<span class="login100-form-title p-b-41">
 					Blog - Inscription
 				</span>
-				<form name="myForm" class="login100-form validate-form p-b-33 p-t-5" method="POST" action="/inscription" onsubmit="return validateForm()" required>
+				<form name="myForminsc" class="login100-form validate-form p-b-33 p-t-5" method="POST" action="/inscription" onsubmit="return validateForminscription()" required>
 
 					<div class="wrap-input100 validate-input" data-validate = "Enter username" >
 						<input class="input100" type="text" name="username" placeholder="Username">
@@ -32,15 +32,11 @@
 				</form>
 			</div>
 <script>
-	function validateForm() {
-  var x = document.forms["myForm"]["username"].value;
-  var y = document.forms["myForm"]["password"].value;
+	function validateForminscription() {
+  var x = document.forms["myForminsc"]["username"].value;
+  var y = document.forms["myForminsc"]["password"].value;
   if (x == "" || x == null) {
-    alert("Veuillez rentrer un nom d'utilisateur.");
-    return false;
-  }
-  if (y == "" || y == null) {
-    alert("Veuillez rentrer un mot de passe.");
+    alert("Veuillez rentrer un nom d'utilisateur pour s'inscrire.");
     return false;
   }
 }
@@ -54,7 +50,7 @@
 				<span class="login100-form-title p-b-41">
 					Blog - Connexion
 				</span>
-				<form class="login100-form validate-form p-b-33 p-t-5" method="POST" action="/connexion" onsubmit="return validateForm()" required>
+				<form name="myFormcon" class="login100-form validate-form p-b-33 p-t-5" method="POST" action="/connexion" onsubmit="return validateFormconnexion()" required>
 
 					<div class="wrap-input100 validate-input" data-validate = "Enter username">
 						<input class="input100" type="text" name="username" placeholder="Username" autofocus>
@@ -78,7 +74,16 @@
 
 		</div>
 	</div>
-	
+	<script>	
+		function validateFormconnexion() {
+  var x = document.forms["myFormcon"]["username"].value;
+  var y = document.forms["myFormcon"]["password"].value;
+  if (x == "" || x == null) {
+    alert("Veuillez rentrer un nom d'utilisateur pour se connecter.");
+    return false;
+  }
+}
+</script>
 	<div id="dropDownSelect1"></div>
 
 	
