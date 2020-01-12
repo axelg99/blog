@@ -1,6 +1,6 @@
 <a href="/home">Afficher les article</a>
 <div align="center" class="container-login100-form-btn">
- <h1>Papotes ou lis</h1>
+ <h1>Ecris-ton article que tout le monde pourra voir !</h1>
 
             <div class="wrap-login100 p-t-30 p-b-50">
 				<form class="login100-form validate-form p-b-33 p-t-5" action="/home/new_art" method="post" >
@@ -8,7 +8,17 @@
                     <div class="wrap-input100 validate-input">
                         <textarea class="input100" name="article" placeholder="Ecris ton article"></textarea>
                     </div>
-                    
+                    <select data-placeholder="Toutes les catégories" name="tag">
+                    <option>High-Tech</option>
+                    <option>Blagues</option>
+                    <option>Politique</option>
+                    <option>Attractions</option>
+                    <option>Cafés</option>
+                    <option>Shopping</option>
+                    <option>Arts et culture</option>
+                    <option>Parcs et jardins</option>
+                    <option>Points de vue</option>
+                    </select>
                 <div class="container-login100-form-btn m-t-32">
                     <button >Publier !</button>
                 </div>

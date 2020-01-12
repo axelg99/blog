@@ -70,14 +70,29 @@ router.get('/home/new_art', (req, res, next) => {
 });
 
 router.post('/home/new_art', async (req, res) => {
-    const { name_art, article } = req.body;
+    const { name_art, article, tag} = req.body;
     const newlink = {
         name_art,
-        article
+        article,
+        tag
     };
 
     await pool.query('INSERT INTO articles set ?', [newlink]);
-    res.send("Article envoyé");
+    res.redirect('/home');
+    
+});
+
+
+router.get('/home/commentaires/', (req, res, next) => {
+    res.render('comm', { title : "My Blog", name: user.username});
+});
+
+router.post('/home/commentaires/', async (req, res) => {
+    pool.query('SELECT * FROM commentaires', function(err, bddcomm) {
+            
+        res.render('comm', {name: user.username, comm : bddcomm});
+        });
+        return;
     
 });
 

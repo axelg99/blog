@@ -1,0 +1,38 @@
+<h1>Voila ça fonctionne</h1>
+
+
+<div align="center" class="container-login100-form-btn">
+ <h1>Papotes ou lis</h1>
+
+            <div class="wrap-login100 p-t-30 p-b-50">
+				<form class="login100-form validate-form p-b-33 p-t-5" action="/home/new_art" method="post" >
+                        <input class="input100" type="text" name="commentaire" placeholder="commentaire">
+                    <div class="wrap-input100 validate-input">
+                        <input class="input100" name="username">{{name}}</input>
+                    </div>
+                    
+                <div class="container-login100-form-btn m-t-32">
+                    <button >Publier !</button>
+                </div>
+                </form>
+            </div>    
+</div>
+
+<h3>commentaires :</h3>
+<table>
+    <thead>
+        <th>Title :</th>
+        <th>Article :</th>
+        <th>Date</th>
+    </thead>
+    <tbody>
+        {{#each article}}
+        <tr>
+            <td>{{this.name_art}}</td>
+            <td>{{this.article}}</td>
+            <td>{{this.date_art}}</td>
+            <td><a href="/home/commentaires">Commentaires</a></td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
